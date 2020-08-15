@@ -1,6 +1,7 @@
 import { listRepos } from "./list-repos.mjs";
 import { readYamlSync } from "./read-yaml.mjs";
 import { syncLabel } from "./sync-label.mjs";
+import pThrottle from "p-throttle";
 
 const main = async () => {
   const user = process.env.GITHUB_USER;
@@ -12,9 +13,8 @@ const main = async () => {
   const repos = await listRepos(user);
   const labels = readYamlSync();
 
-  const result = await Promise.all(
-    repos.map((repo) => syncLabel(repo, labels))
-  );
+  const throttled = pThrottle((repo) => syncLabel(repo, labels), 5, 2000);
+  const result = await Promise.all(repos.map((repo) => throttled(repo)));
 
   process.stdout.write(JSON.stringify(result, null, 2));
 };
