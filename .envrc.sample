@@ -1,4 +1,4 @@
 # your user or organaization
-export GITHUB_USER=xxx
+export GITHUB_USER=geolonia
 # GitHub Access Token. Automatically provide in GitHub Actions workflows.
 export GITHUB_TOKEN=xxx

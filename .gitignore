@@ -67,3 +67,6 @@ typings/
 
 # use Yarn
 package-lock.json
+
+# Project specific
+result.json
