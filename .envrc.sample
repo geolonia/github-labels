@@ -1,0 +1,4 @@
+# your user or organaization
+export GITHUB_USER=xxx
+# GitHub Access Token. Automatically provide in GitHub Actions workflows.
+export GITHUB_TOKEN=xxx

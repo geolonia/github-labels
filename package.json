@@ -1,0 +1,13 @@
+{
+  "name": "@geolonia/github-labels",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kamataryo <kamataryo@users.noreply.github.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "github-label-sync": "^2.0.0",
+    "yaml": "^1.10.0"
+  }
+}
