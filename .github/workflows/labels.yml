@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn
-      - name: sync labels    
+      - name: sync labels
         run: GITHUB_ORGANIZATION=geolonia node src/main.mjs
         env:
-           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_ACCESS_TOKEN}}
