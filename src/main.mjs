@@ -4,13 +4,15 @@ import { syncLabel } from "./sync-label.mjs";
 import pThrottle from "p-throttle";
 
 const main = async () => {
-  const user = process.env.GITHUB_USER;
-  if (!user) {
-    process.stdout.write("Please specify GITHUB_USER environmental variable.");
+  const org = process.env.GITHUB_ORGANIZATION;
+  if (!org) {
+    process.stdout.write(
+      "Please specify GITHUB_ORGANIZATION environmental variable."
+    );
     process.exit(1);
   }
 
-  const repos = await listRepos(user);
+  const repos = await listRepos(org);
   const labels = readYamlSync();
 
   const throttled = pThrottle((repo) => syncLabel(repo, labels), 5, 2000);

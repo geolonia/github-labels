@@ -2,11 +2,11 @@ import axios from "axios";
 
 /**
  *
- * @param {string} user username
+ * @param {string} org organization name
  * @param {object} option
  * @return {string[]}
  */
-export const listRepos = async (user) => {
+export const listRepos = async (org) => {
   const endpoint = "https://api.github.com/graphql";
   const token = process.env.GITHUB_TOKEN;
   if (!token) {
@@ -26,7 +26,7 @@ export const listRepos = async (user) => {
         endpoint,
         {
           query: `query {
-            user(login: "${user}") {
+            organization(login: "${org}") {
               repositories(${gqlargument}) {
                 edges {
                   cursor
@@ -48,13 +48,13 @@ export const listRepos = async (user) => {
         throw err;
       });
 
-    const { edges } = data.data.user.repositories;
+    const { edges } = data.data.organization.repositories;
     if (edges.length === 0) {
       isCompleted = true;
     } else {
       const result = edges.reduce(
         (prev, edge) => {
-          prev.names.push(`${user}/${edge.node.name}`);
+          prev.names.push(`${org}/${edge.node.name}`);
           prev.nextCursor = edge.cursor;
           return prev;
         },

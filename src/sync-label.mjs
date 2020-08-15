@@ -6,7 +6,6 @@ export const syncLabel = async (repo, labels) => {
       repo,
       accessToken: process.env.GITHUB_TOKEN,
       allowAddedLabels: true,
-      // dryRun: true,
       labels,
     });
     process.stderr.write(`${repo} has been synced.\n`);
