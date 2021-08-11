@@ -16,6 +16,11 @@ default:
     color: "6DF700"
     description: "The issue has low priority"
 
+  # Release
+  - name: "🚀Release"
+    color: "ff0000"
+    description: "Release related issues"
+
   # additional issue types
   - name: "🧪experimental"
     color: "bfdadc"
