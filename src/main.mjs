@@ -12,13 +12,17 @@ const main = async () => {
     process.exit(1);
   }
 
-  const repos = await listRepos(org);
-  const labels = readYamlSync();
+  try {
+    const repos = await listRepos(org);
+    const labels = readYamlSync();
 
-  const throttled = pThrottle((repo) => syncLabel(repo, labels), 5, 2000);
-  const result = await Promise.all(repos.map((repo) => throttled(repo)));
-
-  process.stdout.write(JSON.stringify(result, null, 2));
+    const throttled = pThrottle((repo) => syncLabel(repo, labels), 5, 2000);
+    const result = await Promise.all(repos.map((repo) => throttled(repo)));
+    process.stdout.write(JSON.stringify(result, null, 2));
+  } catch (error) {
+    console.error(error);
+    process.exit(2);
+  }
 };
 
 main();
