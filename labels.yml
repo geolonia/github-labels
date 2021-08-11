@@ -21,6 +21,10 @@ default:
     color: "ff0000"
     description: "Release related issues"
 
+  - name: "🚀♻️リリース定期タスク"
+    color: "E99695"
+    description: "Release related issues"
+
   # additional issue types
   - name: "🧪experimental"
     color: "bfdadc"
