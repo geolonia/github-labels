@@ -29,3 +29,28 @@ default:
   - name: "🧪experimental"
     color: "bfdadc"
     description: "Experimental purpose issues"
+
+  # Impact
+  - name: "Impact: Urgent"
+    color: "A72CA0"
+    description: "The issue has urgent impact"
+  - name: "Impact: Large"
+    color: "F783A0"
+    description: "The issue has large impact"
+  - name: "Impact: Middle"
+    color: "F7DDA0"
+    description: "The issue has middle impact"
+  - name: "Impact: Small"
+    color: "6DF7A0"
+    description: "The issue has small impact"
+
+  # Time
+  - name: "Time: Long"
+    color: "333333"
+    description: "The issue takes about a week"
+  - name: "Time: Middle"
+    color: "999999"
+    description: "The issue takes a few days"
+  - name: "Time: Short"
+    color: "eeeeee"
+    description: "The issue takes several hours"
