@@ -25,4 +25,4 @@ jobs:
       - name: sync labels
         run: GITHUB_ORGANIZATION=geolonia node src/main.mjs
         env:
-          GITHUB_TOKEN: ${{secrets.GH_ACCESS_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
