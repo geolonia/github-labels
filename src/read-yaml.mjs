@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const readYamlSync = () => {
-  const { default: labels } = YAML.parse(
+  const { default: { labels } } = YAML.parse(
     fs
       .readFileSync(path.resolve(__dirname, "..", "labels.yml"))
       .toString("utf-8")

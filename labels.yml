@@ -1,3 +1,4 @@
+# see https://github.com/Financial-Times/github-label-sync for the properties
 default:
   # priorities
   - name: "Priority: Emerg"
@@ -31,9 +32,6 @@ default:
     description: "Experimental purpose issues"
 
   # Impact
-  - name: "Impact: Urgent"
-    color: "A72CA0"
-    description: "The issue has urgent impact"
   - name: "Impact: Large"
     color: "F783A0"
     description: "The issue has large impact"
