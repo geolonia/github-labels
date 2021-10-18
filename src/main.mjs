@@ -15,8 +15,7 @@ const main = async () => {
   try {
     const repos = await listRepos(org);
     const labels = readYamlSync();
-
-    const throttled = pThrottle((repo) => syncLabel(repo, labels), 5, 2000);
+    const throttled = pThrottle((repo) => syncLabel(repo, labels), 5, 5000);
     const result = await Promise.all(repos.map((repo) => throttled(repo)));
     process.stdout.write(JSON.stringify(result, null, 2));
   } catch (error) {
