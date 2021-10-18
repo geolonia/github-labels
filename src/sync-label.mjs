@@ -5,7 +5,7 @@ export const syncLabel = async (repo, labels) => {
     const diff = await githubLabelSync({
       repo,
       accessToken: process.env.GITHUB_TOKEN,
-      allowAddedLabels: true,
+      allowAddedLabels: true, // [IMPORTANT] if false, all additional labels will be deleted.
       labels,
     });
     process.stderr.write(`${repo} has been synced.\n`);

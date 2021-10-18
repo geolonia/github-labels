@@ -8,6 +8,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "github-label-sync": "^2.0.0",
+    "isomorphic-fetch": "^3.0.0",
     "p-throttle": "^3.1.0",
     "yaml": "^1.10.0"
   }
